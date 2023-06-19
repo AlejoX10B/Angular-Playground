@@ -1,0 +1,97 @@
+.sidenav
+  top: 0
+  z-index: 1
+  width: 5rem
+  height: 100vh
+  position: fixed
+  background: #263238
+  transition: all .5s ease
+  box-shadow: 0.063rem 0 1.25rem 0 #8690a3
+
+  .logo-section
+    width: 100%
+    display: flex
+    align-items: center
+    padding: 0.938rem 0.938rem 0 0.938rem
+
+    .logo
+      background: white
+      text-align: center
+      width: 3rem
+      min-width: 3rem
+      border-radius: 0.313rem
+      padding: 0.313rem
+      font-size: 24px
+      font-weight: 900
+      cursor: pointer
+      border: none
+
+    .logo-text
+      color: white
+      font-size: 24px
+      font-weight: 700
+      margin-left: 1.5rem
+
+    .btn-close
+      width: 2rem
+      height: 2rem
+      border: none
+      cursor: pointer
+      margin-left: auto
+      border-radius: 50%
+      background-color: transparent
+
+      i
+        color: white
+        font-size: 24px
+
+.sidenav-collapsed
+  width: 16.5625rem
+
+.nav-items
+  margin: 0
+  padding: 0.938rem
+  height: calc(100% - 3.65rem)
+  cursor: pointer
+  list-style: none
+  display: flex
+  align-items: center
+  flex-direction: column
+
+  .nav-item
+    width: 100%
+    margin-bottom: 0.625rem
+    overflow-x: hidden
+    transition: all .3s ease
+
+    .nav-link
+      display: flex
+      align-items: center
+      height: 3rem
+      color: #f3f3f3
+      text-decoration: none
+      border-radius: 0.625rem
+      transition: all .3s ease
+
+      .nav-link-icon
+        font-size: 22px
+        width: 2rem
+        min-width: 2rem
+        margin: 0 0.5rem
+        text-align: center
+
+      .nav-link-text
+        margin-left: 1.5rem
+
+  .nav-item:hover
+    .nav-link
+      color: black
+      background-color: white
+
+.active
+  background-color: white
+
+  .nav-link-icon,
+  .nav-link-text
+    color: black
+

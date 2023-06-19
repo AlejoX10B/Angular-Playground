@@ -1,0 +1,6 @@
+<app-sidenav (onToggle)="onToggle($event)"></app-sidenav>
+
+<main [ngClass]="getClass()">
+    <router-outlet></router-outlet>
+</main>
+

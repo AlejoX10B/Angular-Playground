@@ -1,5 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
 
+$title-font: 'Nunito Sans', sans-serif
+$subtitle-font: 'Libre Franklin', sans-serif
+$main-font: 'Catamaran', sans-serif
+
 html
   box-sizing: border-box
 
@@ -8,16 +12,25 @@ html
   padding: 0
   box-sizing: inherit
 
-body, p
-  font-family: 'Catamaran', sans-serif
+body
+  position: relative
+  font-family: $main-font
   background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%)
 
 h1, h2
   font-weight: 600
-  font-family: 'Nunito Sans', sans-serif
+  font-family: $title-font
 
 h3, h4, h5
   font-weight: 400
   font-style: italic
-  font-family: 'Libre Franklin', sans-serif
+  font-family: $subtitle-font
+
+p
+  font-family: $main-font
+
+nav
+  ul
+    font-weight: 500
+    font-family: $title-font
 
