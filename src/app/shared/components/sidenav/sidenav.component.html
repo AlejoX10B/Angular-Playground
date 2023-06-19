@@ -3,8 +3,8 @@
   <div class="logo-section">
     <button type="button" class="logo" (click)="toggleCollapsed()">A</button>
 
-    <ng-container @fadeInOut *ngIf="!collapsed">
-      <span class="logo-text">Angular</span>
+    <ng-container *ngIf="!collapsed">
+      <span @fadeInOut class="logo-text">Angular</span>
       <button @rotate type="button" class="btn-close" (click)="toggleCollapsed()">
         <i class="bi bi-x-circle-fill"></i>
       </button>
