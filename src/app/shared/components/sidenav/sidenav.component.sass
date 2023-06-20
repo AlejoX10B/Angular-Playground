@@ -44,8 +44,8 @@
       background-color: transparent
 
       i
-        color: white
-        font-size: 24px
+        color: gray
+        font-size: 18px
 
 .sidenav-collapsed
   width: 16.5625rem
@@ -62,8 +62,8 @@
 
   .nav-item
     width: 100%
-    margin-bottom: 0.625rem
     overflow-x: hidden
+    margin-bottom: 0.625rem
     transition: all .3s ease
 
     .nav-link
@@ -76,9 +76,9 @@
       transition: all .3s ease
 
       .nav-link-icon
-        font-size: 22px
         width: 2rem
         min-width: 2rem
+        font-size: 22px
         margin: 0 0.5rem
         text-align: center
 
@@ -92,8 +92,20 @@
 
 .active
   background-color: white
+  transition: all .3s ease
+
+  .nav-link-icon
+    filter: drop-shadow(0.2rem 0.12rem 0 gainsboro)
 
   .nav-link-icon,
   .nav-link-text
     color: black
+    font-weight: bold
+
+.active:before
+  content: ''
+  width: 2px
+  height: 20px
+  border-radius: 2px
+  background-color: black
 
