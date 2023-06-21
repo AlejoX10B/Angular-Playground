@@ -11,9 +11,9 @@
     </ng-container>
   </div>
 
-  <ul class="nav-items">
-
+  <!-- <ul class="nav-items">
     <li *ngFor="let item of navItems" class="nav-item">
+
       <a class="nav-link" routerLinkActive="active"
         [routerLink]="item.routeLink" [routerLinkActiveOptions]="{exact: true}">
         <i class="nav-link-icon" [class]="item.icon"></i>
@@ -21,8 +21,46 @@
           {{ item.label }}
         </span>
       </a>
-    </li>
 
+    </li>
+  </ul> -->
+
+  <ul class="nav-items">
+    <li *ngFor="let item of navItems" class="nav-item">
+
+      <a *ngIf="item.items && item.items.length > 0" 
+          (click)="handleClick(item)"
+          class="nav-link">
+        <i class="nav-link-icon" [class]="item.icon"></i>
+        <span @fadeInOut *ngIf="!collapsed" class="nav-link-text">
+          {{ item.label }}
+        </span>
+        <i *ngIf="!collapsed && item.items"
+            [ngClass]="!item.expanded ? 'bi bi-caret-down-fill' : 'bi bi-caret-up-fill'"
+            class="nav-collapse-icon"></i>
+      </a>
+
+      <a *ngIf="!item.items || (item.items && item.items.length == 0)"
+        class="nav-link"
+        routerLinkActive="active"
+        [routerLink]="item.routeLink"
+        [routerLinkActiveOptions]="{exact: true}">
+
+        <i class="nav-link-icon" [class]="item.icon"></i>
+        <span @fadeInOut *ngIf="!collapsed" class="nav-link-text">
+          {{ item.label }}
+        </span>
+      </a>
+
+      <div *ngIf="item.items && item.items.length > 0">
+        <app-sidenav-item [data]="item"
+                          [collapsed]="collapsed"
+                          [multiple]="multiple"
+                          [expanded]="item.expanded">
+        </app-sidenav-item>
+      </div>
+
+    </li>
   </ul>
 
 </nav>

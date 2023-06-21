@@ -36,8 +36,16 @@ export class SidenavComponent implements OnInit {
   navItems: NavItem[] = navItems;
 
   collapsed: boolean = true;
+  multiple: boolean = false;
   screenWidth: number = 0;
 
+  ngOnInit() {
+    this.screenWidth = window.innerWidth;
+  }
+
+  emmitEvent() {
+    this.onToggle.emit({ collapsed: this.collapsed, screenWidth: this.screenWidth });
+  }
 
   @HostListener('window:resize', ['$event'])
   onResize(event: any) {
@@ -46,10 +54,6 @@ export class SidenavComponent implements OnInit {
       this.collapsed = true;
       this.emmitEvent();
     }
-  }
-
-  ngOnInit() {
-    this.screenWidth = window.innerWidth;
   }
 
   toggleCollapsed() {
@@ -62,9 +66,17 @@ export class SidenavComponent implements OnInit {
     this.emmitEvent();
   }
 
+  handleClick(item: NavItem) {
 
-  emmitEvent() {
-    this.onToggle.emit({ collapsed: this.collapsed, screenWidth: this.screenWidth });
+    if (!this.multiple) {
+      for (let modelItem of this.navItems) {
+        if (item !== modelItem && modelItem.expanded) {
+          modelItem.expanded = false;
+        }
+      }
+    }
+
+    item.expanded = !item.expanded;
   }
 
 }

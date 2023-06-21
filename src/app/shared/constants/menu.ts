@@ -9,7 +9,17 @@ export const navItems: NavItem[] = [
   {
     routeLink: '/estates',
     icon: 'bi bi-buildings',
-    label: 'Inmuebles'
+    label: 'Inmuebles',
+    items: [
+      {
+        routeLink: 'estates/list',
+        label: 'Lista de Inmuebles'
+      },
+      {
+        routeLink: 'estates/add',
+        label: 'Añadir Inmueble'
+      },
+    ]
   },
   {
     routeLink: '/contracts',

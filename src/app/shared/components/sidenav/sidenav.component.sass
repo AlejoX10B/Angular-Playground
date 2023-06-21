@@ -62,9 +62,7 @@
 
   .nav-item
     width: 100%
-    overflow-x: hidden
     margin-bottom: 0.625rem
-    transition: all .3s ease
 
     .nav-link
       display: flex
@@ -89,6 +87,9 @@
     .nav-link
       color: black
       background-color: white
+    
+    .nav-collapse-icon:
+      color: black
 
 .active
   background-color: white
@@ -97,6 +98,7 @@
   .nav-link-icon
     filter: drop-shadow(0.2rem 0.12rem 0 gainsboro)
 
+  .nav-collapse-icon,
   .nav-link-icon,
   .nav-link-text
     color: black
@@ -108,4 +110,35 @@
   height: 20px
   border-radius: 2px
   background-color: black
+
+
+.nav-collapse-icon
+  font-size: 18px
+  width: 2rem
+  min-width: 2rem
+  margin: auto 0.5rem auto auto
+  text-align: center
+
+.sublevel-nav
+  list-style: none
+  margin-left: 10px
+
+  .sublevel-nav-item
+    .sublevel-nav-link
+      display: flex
+      align-items: center
+      height: 3rem
+      color: black
+      text-decoration: none
+      border-radius: 0.625rem
+      transition: all .3s ease
+
+      .sublevel-link-icon
+        width: 2rem
+        min-width: 2rem
+        margin: 0 0.5rem
+        text-align: center
+
+      .sublevel-link-text
+        margin-left: 0.8rem
 
